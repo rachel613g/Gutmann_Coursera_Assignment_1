@@ -10,16 +10,17 @@
  *
  */
 
-#ifndef __STATS_H__
-#define __STATs_H__
-
 /**
  *
  * @brief This function prints the minimum, maximum, mean, and median of an int array.
  * 
+ * @params unsigned int minimum
+ * @params unsigned int maximum
+ * @params unsigned int mean
+ * @params unsigned int median
  */
- void print_statistics();
-
+void print_statistics(unsigned int minimum, unsigned int maximum, 
+		unsigned int mean, unsigned int median);
 /**
   *
   * @brief This function prints the given array.
