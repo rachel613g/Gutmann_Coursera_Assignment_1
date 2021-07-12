@@ -27,40 +27,64 @@ void main() {
                                   201,   6,  12,  60,   8,   2,   5,  67,
                                   7,  87, 250, 230,  99,   3, 100,  90};
 
-     print_statistics(0, 0, find_mean(test, SIZE), 0);
-     sort_array(test, SIZE);
+     sort_array(test);
+     print_statistics(find_minimum(test), find_maximum(test), find_mean(test), 0);
+     print_array(test);
 }
 
-void print_statistics(unsigned int minimum, unsigned int maximum, 
+void print_statistics( unsigned int minimum, unsigned int maximum, 
 		unsigned int mean, unsigned int median){
-     printf("minimum: %x\nmaximum: %x\nmean: %x\nmode:%x\n", 
+     printf("minimum: %x\nmaximum: %u\nmean: %u\nmedian:%u\n", 
 		     minimum, maximum, mean, median);
-     //TODO: include sorted array
+     
 }
 
-void print_array(unsigned char *ptr, unsigned int length){
-}
-
-unsigned int find_median(unsigned char *ptr, unsigned int length){
-}
-
-
-unsigned int find_mean(unsigned char *ptr, unsigned int length){
-     int sum = 0;
-     for (int i = 0; i < 40; i++) {
-	 sum += *ptr;
+void print_array(unsigned char *ptr){
+     printf("sorted array:");
+     for (int i = 0; i < SIZE; i++){
+	 
+	 //format in rows of five
+	 if(i % 5 == 0){
+	      printf("\n");
+	 }
+	 
+         printf("%u\t", *ptr++);
      }
-     return sum/length;//i.e. mean
+
+     printf("\n");
+}
+
+unsigned int find_median(unsigned char *ptr){
+     if(SIZE%2 == 0){
+     
+     }else{
+          
+     }
 }
 
 
-unsigned int find_minimum(unsigned char *ptr, unsigned int length){
+unsigned int find_mean(unsigned char *ptr){
+     int sum = 0;
+     for (int i = 0; i < SIZE; i++) {
+	 sum += *ptr++;
+     }
+     return sum/SIZE;//i.e.average
 }
 
 
-unsigned int find_maximum(unsigned char *ptr, unsigned int length){
+unsigned int find_minimum(unsigned char *ptr){
+     //return first element of sorted array
+     return *ptr;
 }
 
-void sort_array(unsigned char *ptr, unsigned int length){
-     qsort((void *)ptr, length, sizeof(char), strcmp);
+
+unsigned int find_maximum(unsigned char *ptr){
+     //return last element of sorted array
+     unsigned char *ptr_to_last = (char *) ptr;
+     ptr_to_last = ptr + (SIZE-1);
+     return *ptr_to_last;
+}
+
+void sort_array(unsigned char *ptr){
+     qsort((void *)ptr, SIZE, sizeof(char), strcmp);
 }
