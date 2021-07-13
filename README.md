@@ -5,10 +5,6 @@ C Program that outputs to command line the minimum, maximum, mean, and median of
 gcc compiled.
 
 
-# To Run
-Dowload stats.out file, this is the compiled c code.  Go to saved file's directory in linux terminal and use the `./stats.out` command.
-
-TODO: can compiled c code run without the other stuff aroun?
-TODO: I'm not sure I'm getting the right numbers.
-TODO: embed link to stats.out  in README
-
+### To Run
+TODO: make sure numbers work.
+TODO: figure out how user can run an executable.
