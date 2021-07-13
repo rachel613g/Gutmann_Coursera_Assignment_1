@@ -28,7 +28,7 @@ void main() {
                                   7,  87, 250, 230,  99,   3, 100,  90};
 
      sort_array(test);
-     print_statistics(find_minimum(test), find_maximum(test), find_mean(test), 0);
+     print_statistics(find_minimum(test), find_maximum(test), find_mean(test), find_median(test));
      print_array(test);
 }
 
@@ -55,11 +55,15 @@ void print_array(unsigned char *ptr){
 }
 
 unsigned int find_median(unsigned char *ptr){
+     int med = 0;
      if(SIZE%2 == 0){
-     
+	     //avg. of middle element and one above middle element.
+     	med = (ptr[SIZE/2 -1] + ptr[SIZE/2 + 2]) / 2  ;
      }else{
-          
+	     //TODO: understand int division in c. does it round up if not a whole number?
+          med = SIZE/2 + 1;
      }
+     return med;
 }
 
 
