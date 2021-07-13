@@ -4,7 +4,4 @@ C Program that outputs to command line the minimum, maximum, mean, and median of
 
 gcc compiled.
 
-
-### To Run
-TODO: make sure numbers work.
-TODO: figure out how user can run an executable.
+//TODO: figure out how user can run an executable.
